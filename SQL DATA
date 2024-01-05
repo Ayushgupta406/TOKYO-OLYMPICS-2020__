@@ -1,42 +1,72 @@
+---------------------------------------------------------------------------------------
 CREATE DATABASE mysql_poject2;
+
+----------------------------------------------------------------------------------------
 
 SELECT * FROM athletes;
 SELECT * FROM tokyodataset;
 
+---------------------------------------------------------------------------------------
 SELECT * FROM Athletes
-WHERE NOC = 'INDIA' AND discipline = 'HOCKEY';
+WHERE NOC = 'INDIA' 
+AND discipline = 'HOCKEY';
 
+---------------------------------------------------------------------------------------
 
-SELECT Country, Total FROM tokyodataset
+SELECT Country, Total 
+FROM tokyodataset
 ORDER BY Total DESC
 LIMIT 10;
 
-SELECT count(name) FROM Athletes
+--------------------------------------------------------------------------------------
+
+SELECT count(name) 
+FROM Athletes
 WHERE NOC = 'INDIA';
 
-SELECT Country, Total, Rank
+----------------------------------------------------------------------------------------
+
+SELECT Country, 
+Total, Rank
 FROM tokyodataset
 WHERE country = 'INDIA';
+
+-----------------------------------------------------------------------------------------
 
 SELECT DISTINCT discipline
 FROM Athletes
 WHERE NOC = 'INDIA';
 
- SELECT discipline, name, COUNT(*) as total_medals
+-----------------------------------------------------------------------------------------
+
+ SELECT discipline,
+name, COUNT(*) 
+as total_medals
 FROM athletes
 GROUP BY discipline, name
-ORDER BY discipline, total_medals ASC;
+ORDER BY discipline, 
+total_medals ASC;
 
-SELECT country, AVG(total) as avg_medals_per_athlete
+--------------------------------------------------------------------------------------------
+
+SELECT country,
+AVG(total) as 
+avg_medals_per_athlete
 FROM tokyodataset
 GROUP BY country
 ORDER BY avg_medals_per_athlete DESC;
 
-SELECT name, NOC, COUNT(*) as total_medals
+--------------------------------------------------------------------------------------------
+
+SELECT name, 
+NOC, COUNT(*) 
+as total_medals
 FROM athletes
 WHERE NOC = 'INDIA'
 GROUP BY name, NOC
 ORDER BY total_medals DESC;
+
+------------------------------------------------------------------------------------------------
 
 
 
